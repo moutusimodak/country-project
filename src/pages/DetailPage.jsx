@@ -131,26 +131,4 @@ const DetailPage = () => {
 };
 
 export default DetailPage;
-// import React, { useState, useEffect } from "react";
-// import Navbar from '../components/Navbar';
 
-// const DetailsPage = () => {
-//     const [theme, setTheme] = useState("light");
-//   return (
-//     <div
-
-//       className={
-//         theme === "light"
-//           ? "bg-white text-black min-h-screen"
-//           : "bg-gray-900 text-white min-h-screen"
-//       }
-//       >
-
-//       <Navbar theme={theme} setTheme={setTheme} />
-//       <h1>Details Page</h1>
-//       {/* Remove the rest of your implementation for debugging */}
-//     </div>
-//   );
-// };
-
-// export default DetailsPage;
