@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Select from "../components/Select";
 import CountryCard from "../components/CountryCard";
-
 
 import fetchCountry from "../utils/fetchCountry";
 import getSubregions from "../utils/getSubRegion";
@@ -21,22 +20,19 @@ const HomePage = () => {
   const [theme, setTheme] = useState("light");
   const [error, setError] = useState(null);
 
-
-
   // Fetch country
   useEffect(() => {
     const loadCountries = async () => {
-      try{
+      try {
         const data = await fetchCountry(url);
         setCountries(data);
         const uniqueRegions = Array.from(
           new Set(data.map((country) => country.region))
         );
         setRegions(uniqueRegions);
-      }
-      catch(err){
+      } catch (err) {
         setError(() => err);
-      }     
+      }
     };
     loadCountries();
   }, []);
@@ -47,7 +43,13 @@ const HomePage = () => {
   }, [region, countries]);
 
   // Filter countries based on search, region, and subregion
-  const filteredCountries = filterAndSort(countries, search, region, subregion, sortCountry);
+  const filteredCountries = filterAndSort(
+    countries,
+    search,
+    region,
+    subregion,
+    sortCountry
+  );
 
   return (
     <div
@@ -57,9 +59,8 @@ const HomePage = () => {
           : "bg-gray-900 text-white min-h-screen"
       }
     >
-      
       <Navbar theme={theme} setTheme={setTheme} />
-      
+
       <div className="p-4 flex flex-col space-y-4">
         <Select
           search={search}

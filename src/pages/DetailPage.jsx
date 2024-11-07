@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
-
 const url = import.meta.env.VITE_URL;
+
 const DetailPage = () => {
   const [theme, setTheme] = useState("light");
   const [country, setCountry] = useState(null);
@@ -28,7 +28,7 @@ const DetailPage = () => {
   }, [code]);
 
   if (error) return <div>{error}</div>;
-  if (!country) return <div>Loading...</div>; 
+  if (!country) return <div>Loading...</div>;
 
   return (
     <div
@@ -131,4 +131,3 @@ const DetailPage = () => {
 };
 
 export default DetailPage;
-

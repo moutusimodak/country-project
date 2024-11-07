@@ -1,5 +1,3 @@
-import React from "react";
-
 const Navbar = ({ theme, setTheme }) => {
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));

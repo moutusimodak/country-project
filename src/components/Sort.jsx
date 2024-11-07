@@ -1,13 +1,10 @@
-
-import React from 'react';
-
 const Sort = ({ sortCountry, setSortCountry, theme }) => (
   <div className="w-full md:w-1/6 ">
     <select
       value={sortCountry}
       onChange={(e) => setSortCountry(e.target.value)}
       className={`border rounded-md p-2 shadow-lg w-full ${
-        theme === 'light' ? 'bg-white text-black' : 'bg-gray-800 text-white'
+        theme === "light" ? "bg-white text-black" : "bg-gray-800 text-white"
       }`}
     >
       <option value="">Sort by</option>
