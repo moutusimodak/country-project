@@ -34,12 +34,12 @@ const HomePage = () => {
         );
         setRegions(uniqueRegions);
       }
-      catch{
-        setError(error)
+      catch(err){
+        setError(() => err);
       }     
     };
     loadCountries();
-  }, [url]);
+  }, []);
 
   // Update subregions
   useEffect(() => {
