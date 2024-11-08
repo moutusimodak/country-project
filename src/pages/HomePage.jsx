@@ -7,7 +7,8 @@ import fetchCountry from "../utils/fetchCountry";
 import getSubregions from "../utils/getSubRegion";
 import filterAndSort from "../utils/filterAndSort";
 
-const url = import.meta.env.VITE_URL;
+
+import config from "../config/config"
 
 const HomePage = () => {
   const [countries, setCountries] = useState([]);
@@ -24,7 +25,7 @@ const HomePage = () => {
   useEffect(() => {
     const loadCountries = async () => {
       try {
-        const data = await fetchCountry(url);
+        const data = await fetchCountry(config);
         setCountries(data);
         const uniqueRegions = Array.from(
           new Set(data.map((country) => country.region))

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
-const url = import.meta.env.VITE_URL;
+import config from "../config/config";
 
 const DetailPage = () => {
   const [theme, setTheme] = useState("light");
@@ -14,7 +14,7 @@ const DetailPage = () => {
   useEffect(() => {
     const loadCountries = async () => {
       try {
-        const res = await fetch(`${url}/alpha/${code}`);
+        const res = await fetch(`${config}/alpha/${code}`);
         if (!res.ok) throw new Error("Network response was not ok");
         const data = await res.json();
         setCountry(data[0]);
